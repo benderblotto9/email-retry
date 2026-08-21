@@ -12,12 +12,12 @@ import (
 
 // Watcher monitors a log file for changes and processes new content.
 type Watcher struct {
-	config    *Config
-	parser    *Parser
-	sender    *Sender
-	store     *Store
-	file      *os.File
-	fileSize  int64
+	config   *Config
+	parser   *Parser
+	sender   *Sender
+	store    *Store
+	file     *os.File
+	fileSize int64
 }
 
 // NewWatcher creates a new file watcher with the given dependencies.
