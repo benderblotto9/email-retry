@@ -1,0 +1,19 @@
+# Binary
+email-retry
+email-retry.exe
+
+# Database
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Config with secrets
+config.yaml
+
+# Test files
+test.log
+test-multi.log
+
+# Go
+vendor/
