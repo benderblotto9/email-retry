@@ -1,0 +1,40 @@
+# Git
+.git
+.gitignore
+
+# Build artifacts
+email-retry
+email-retry.exe
+
+# Database
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Test files
+*_test.go
+test.log
+test-multi.log
+
+# Test build output
+coverage.out
+coverage.html
+
+# IDE / editor
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Docs
+README.md
+LICENSE
+
+# Makefile (not needed in build context)
+Makefile
