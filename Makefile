@@ -11,13 +11,13 @@ LDFLAGS  := -s -w -X main.version=$(VERSION)
 all: check build ## Run checks then build
 
 build: ## Build the binary
-	CGO_ENABLED=1 $(GO) build -ldflags "$(LDFLAGS)" -o $(BINARY) .
+	CGO_ENABLED=1 $(GO) build -ldflags "$(LDFLAGS)" -o $(BINARY) ./src
 
 install: ## Install to $GOPATH/bin
-	CGO_ENABLED=1 $(GO) install -ldflags "$(LDFLAGS)" .
+	CGO_ENABLED=1 $(GO) install -ldflags "$(LDFLAGS)" ./src
 
 run: ## Build and run (pass ARGS for flags)
-	CGO_ENABLED=1 $(GO) run . $(ARGS)
+	CGO_ENABLED=1 $(GO) run ./src $(ARGS)
 
 clean: ## Remove build artifacts
 	rm -f $(BINARY)
@@ -50,7 +50,7 @@ test-cover-html: ## Generate HTML coverage report
 check: fmt vet lint ## Run fmt + vet + lint
 
 fmt: ## Format source files
-	gofmt -s -w .
+	gofmt -s -w ./src
 
 vet: ## Run go vet
 	CGO_ENABLED=1 $(GO) vet ./...

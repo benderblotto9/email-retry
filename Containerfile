@@ -8,7 +8,7 @@ COPY go.mod go.sum ./
 RUN go mod download
 
 COPY . .
-RUN CGO_ENABLED=1 go build -ldflags "-s -w" -o /email-retry .
+RUN CGO_ENABLED=1 go build -ldflags "-s -w" -o /email-retry ./src
 
 # ── Runtime stage ────────────────────────────────────────
 FROM registry.fedoraproject.org/fedora-minimal:42
